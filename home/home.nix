@@ -19,18 +19,33 @@
   # environment.
   home.packages = with pkgs; [
 	  (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+
+		# MEdia
     google-chrome
     webcord
     discord
     spotify
+
+		# Desktop
     swww
     waypaper
     waybar
     kitty
     wofi
+
+		# DEV
 		nodejs_22
 		gcc
 		lua
+		cargo
+		rustc
+
+		# Tools
+		htop
+		neofetch
+		bat
+		ripgrep
+		lazygit
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
