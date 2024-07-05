@@ -22,7 +22,7 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-	  (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+		(nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
 
 		# MEdia
     google-chrome
@@ -37,7 +37,7 @@
     kitty
     wofi
 
-    # DEV
+		# DEV
     jetbrains.idea-ultimate
     vscode
     nodejs_22
@@ -45,6 +45,7 @@
     lua
     cargo
     rustc
+		postman
 
     # Tools
     htop
@@ -94,7 +95,7 @@
   gtk = {
     enable = true;
     theme = {
-      name = "adw-gtk3";
+      name = "adw-gtk3-dark";
       package = pkgs.adw-gtk3;
     };
     iconTheme = {

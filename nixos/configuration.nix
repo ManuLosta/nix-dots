@@ -31,6 +31,7 @@
 
   # Enable sound
   sound.enable = true;
+	hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -98,10 +99,6 @@
     enable = true;
     xwayland.enable = true;
   };
-
-  # XDG Portal
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
   # Enable ZSH
   programs.zsh.enable = true;
