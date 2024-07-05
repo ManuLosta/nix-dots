@@ -90,8 +90,8 @@
       package = pkgs.adw-gtk3;
     };
     iconTheme = {
-    name = "MoreWaita";
-    package = pkgs.morewaita-icon-theme;
+			name = "MoreWaita";
+			package = pkgs.morewaita-icon-theme;
     };
   };
 
