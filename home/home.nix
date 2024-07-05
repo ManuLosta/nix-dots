@@ -2,7 +2,7 @@
 
 {
 	imports = [
-		#./hyprland.nix
+		./hyprland.nix
 	];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -46,6 +46,7 @@
     cargo
     rustc
 		postman
+		openjdk21
 
     # Tools
     htop
@@ -55,6 +56,8 @@
     lazygit
     eza
     unzip
+		brightnessctl
+		pavucontrol
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
