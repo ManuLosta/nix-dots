@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 
 {
+	imports = [
+		#./hyprland.nix
+	];
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "manuel";
@@ -33,19 +37,23 @@
     kitty
     wofi
 
-		# DEV
-		nodejs_22
-		gcc
-		lua
-		cargo
-		rustc
+    # DEV
+    jetbrains.idea-ultimate
+    vscode
+    nodejs_22
+    gcc
+    lua
+    cargo
+    rustc
 
-		# Tools
-		htop
-		neofetch
-		bat
-		ripgrep
-		lazygit
+    # Tools
+    htop
+    neofetch
+    bat
+    ripgrep
+    lazygit
+    eza
+    unzip
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -90,8 +98,8 @@
       package = pkgs.adw-gtk3;
     };
     iconTheme = {
-			name = "MoreWaita";
-			package = pkgs.morewaita-icon-theme;
+      name = "MoreWaita";
+      package = pkgs.morewaita-icon-theme;
     };
   };
 
@@ -114,9 +122,9 @@
     enable = true;
     userName = "ManuLosta";
     userEmail = "mlostalom@gmail.com";
-		extraConfig = {
-			init.defaultBranch = "main";
-		};
+    extraConfig = {
+      init.defaultBranch = "main";
+    };
   };
 
   # Let Home Manager install and manage itself.
