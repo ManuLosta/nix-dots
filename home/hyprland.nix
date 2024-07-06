@@ -18,6 +18,7 @@ in {
         "waybar"
         "swaync"
         "sww-daemon"
+				"hyprctl setcursor Bibata-Modern-Classic 20"
       ];
 
       monitor = [

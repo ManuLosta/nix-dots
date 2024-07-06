@@ -23,7 +23,6 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
 
     # MEdia
     google-chrome
@@ -59,6 +58,13 @@
     unzip
     brightnessctl
     pavucontrol
+
+		# Fonts
+		(nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    noto-fonts
+    noto-fonts-emoji
+    cantarell-fonts
+    font-awesome
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -107,6 +113,13 @@
       package = pkgs.morewaita-icon-theme;
     };
   };
+
+	home.pointerCursor = {
+		name = "Bibata-Modern-Classic";
+		package = pkgs.bibata-cursors;
+		size = 20;
+		gtk.enable = true;
+	};
 
   programs.starship = {
     enable = true;
