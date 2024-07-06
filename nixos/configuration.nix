@@ -31,7 +31,7 @@
 
   # Enable sound
   sound.enable = true;
-	hardware.pulseaudio.enable = false;
+  hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -90,8 +90,8 @@
   environment.systemPackages = with pkgs; [
     neovim
     wget
-		wl-clipboard
-		killall
+    wl-clipboard
+    killall
   ];
 
   # Enable Hyprland
@@ -100,10 +100,10 @@
     xwayland.enable = true;
   };
 
-	# Enable polkit
-	security.polkit.enable = true;
+  # Enable polkit
+  security.polkit.enable = true;
 
-	systemd = {
+  systemd = {
   user.services.polkit-gnome-authentication-agent-1 = {
     description = "polkit-gnome-authentication-agent-1";
     wantedBy = [ "graphical-session.target" ];
@@ -116,15 +116,15 @@
         RestartSec = 1;
         TimeoutStopSec = 10;
       };
-		};
-	};
+    };
+  };
 
-	xdg.portal = {
-			enable = true;
-			extraPortals = with pkgs; [
+  xdg.portal = {
+      enable = true;
+      extraPortals = with pkgs; [
         xdg-desktop-portal-gtk
-  		];
-		};
+      ];
+    };
 
   # Enable ZSH
   programs.zsh.enable = true;

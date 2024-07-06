@@ -1,9 +1,9 @@
 { config, pkgs, ... }:
 
 {
-	imports = [
-		./hyprland.nix
-	];
+  imports = [
+    ./hyprland.nix
+  ];
 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -22,22 +22,23 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-		(nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
 
-		# MEdia
+    # MEdia
     google-chrome
     webcord
     discord
     spotify
 
-		# Desktop
+    # Desktop
     swww
     waypaper
     waybar
     kitty
     wofi
+    wlogout
 
-		# DEV
+    # DEV
     jetbrains.idea-ultimate
     vscode
     nodejs_22
@@ -45,8 +46,8 @@
     lua
     cargo
     rustc
-		postman
-		openjdk21
+    postman
+    openjdk21
 
     # Tools
     htop
@@ -56,8 +57,8 @@
     lazygit
     eza
     unzip
-		brightnessctl
-		pavucontrol
+    brightnessctl
+    pavucontrol
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
