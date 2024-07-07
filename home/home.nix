@@ -1,9 +1,11 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   imports = [
     ./hyprland.nix
-		./kitty.nix
+    ./kitty.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -23,7 +25,6 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-
     # MEdia
     google-chrome
     webcord
@@ -36,8 +37,8 @@
     waybar
     wofi
     wlogout
-		wl-clipboard
-		hyprshot
+    wl-clipboard
+    hyprshot
 
     # DEV
     jetbrains.idea-ultimate
@@ -49,7 +50,8 @@
     rustc
     postman
     openjdk21
-		python3
+    python3
+    alejandra
 
     # Tools
     htop
@@ -62,8 +64,8 @@
     brightnessctl
     pavucontrol
 
-		# Fonts
-		(nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    # Fonts
+    (nerdfonts.override {fonts = ["JetBrainsMono"];})
     noto-fonts
     noto-fonts-emoji
     cantarell-fonts
@@ -117,12 +119,12 @@
     };
   };
 
-	home.pointerCursor = {
-		name = "Bibata-Modern-Classic";
-		package = pkgs.bibata-cursors;
-		size = 20;
-		gtk.enable = true;
-	};
+  home.pointerCursor = {
+    name = "Bibata-Modern-Classic";
+    package = pkgs.bibata-cursors;
+    size = 20;
+    gtk.enable = true;
+  };
 
   programs.starship = {
     enable = true;

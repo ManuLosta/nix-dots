@@ -1,4 +1,8 @@
-{ pkgs, inputs, ... }: let
+{
+  pkgs,
+  inputs,
+  ...
+}: let
   playerctl = "${pkgs.playerctl}/bin/playerctl";
   brightnessctl = "${pkgs.brightnessctl}/bin/brightnessctl";
   pactl = "${pkgs.pulseaudio}/bin/pactl";
@@ -17,8 +21,8 @@ in {
       exec-once = [
         "waybar"
         "swaync"
-        "sww-daemon"
-				"hyprctl setcursor Bibata-Modern-Classic 20"
+        "swww-daemon"
+        "hyprctl setcursor Bibata-Modern-Classic 20"
       ];
 
       monitor = [
@@ -91,7 +95,7 @@ in {
       in
         [
           "$mainMod, Q, exec, $terminal"
-          "$mainMod, C, killactive" 
+          "$mainMod, C, killactive"
           "$mainMod, E, exec, $fileManager"
           "$mainMod, V, togglefloating"
           "$mainMod, R, exec, $menu"
@@ -104,9 +108,9 @@ in {
           "$mainMod, S, togglespecialworkspace, magic"
           "$mainMod SHIFT, S, movetoworkspace, special:magic"
 
-					"$mainMod, PRINT, exec, hyprshot -m window"
-					", PRINT, exec, hyprshot -m output"
-					"$shiftmainMod, PRINT, exec, hyprshot -m region"
+          "$mainMod, PRINT, exec, hyprshot -m window"
+          ", PRINT, exec, hyprshot -m output"
+          "$shiftmainMod, PRINT, exec, hyprshot -m region"
 
           (mvfocus "k" "u")
           (mvfocus "j" "d")
@@ -115,12 +119,12 @@ in {
         ]
         ++ (map (i: ws (toString i) (toString i)) arr)
         ++ (map (i: mvtows (toString i) (toString i)) arr);
-    
+
       bindle = [
-          ",XF86MonBrightnessUp,   exec, ${brightnessctl} set +5%"
-          ",XF86MonBrightnessDown, exec, ${brightnessctl} set  5%-"
-          ",XF86AudioRaiseVolume,  exec, ${pactl} set-sink-volume @DEFAULT_SINK@ +5%"
-          ",XF86AudioLowerVolume,  exec, ${pactl} set-sink-volume @DEFAULT_SINK@ -5%"
+        ",XF86MonBrightnessUp,   exec, ${brightnessctl} set +5%"
+        ",XF86MonBrightnessDown, exec, ${brightnessctl} set  5%-"
+        ",XF86AudioRaiseVolume,  exec, ${pactl} set-sink-volume @DEFAULT_SINK@ +5%"
+        ",XF86AudioLowerVolume,  exec, ${pactl} set-sink-volume @DEFAULT_SINK@ -5%"
       ];
 
       bindl = [
@@ -144,6 +148,11 @@ in {
       windowrule = [
         "opacity 0.9 0.8,^(kitty)$"
       ];
+
+      misc = {
+        force_default_wallpaper = 0;
+        disable_hyprland_logo = true;
+      };
     };
   };
 }
