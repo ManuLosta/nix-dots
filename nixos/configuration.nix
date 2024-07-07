@@ -90,7 +90,6 @@
   environment.systemPackages = with pkgs; [
     neovim
     wget
-    wl-clipboard
     killall
   ];
 

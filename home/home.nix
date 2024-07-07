@@ -36,6 +36,8 @@
     waybar
     wofi
     wlogout
+		wl-clipboard
+		hyprshot
 
     # DEV
     jetbrains.idea-ultimate
@@ -47,6 +49,7 @@
     rustc
     postman
     openjdk21
+		python3
 
     # Tools
     htop
@@ -123,17 +126,6 @@
 
   programs.starship = {
     enable = true;
-    # Configuration written to ~/.config/starship.toml
-    settings = {
-      # add_newline = false;
-
-      # character = {
-      #   success_symbol = "[➜](bold green)";
-      #   error_symbol = "[➜](bold red)";
-      # };
-
-      # package.disabled = true;
-    };
   };
 
   programs.git = {

@@ -9,7 +9,7 @@ in {
     xwayland.enable = true;
 
     settings = {
-      "$mod" = "SUPER";
+      "$mainMod" = "SUPER";
       "$terminal" = "kitty";
       "$file" = "nautilus";
       "$menu" = "wofi --show drun";
@@ -82,27 +82,31 @@ in {
 
       bind = let
         binding = mod: cmd: key: arg: "${mod}, ${key}, ${cmd}, ${arg}";
-        mvfocus = binding "$mod" "movefocus";
-        ws = binding "$mod" "workspace";
-        resizeactive = binding "$mod CTRL" "resizeactive";
-        mvactive = binding "$mod ALT" "moveactive";
-        mvtows = binding "$mod SHIFT" "movetoworkspace";
+        mvfocus = binding "$mainMod" "movefocus";
+        ws = binding "$mainMod" "workspace";
+        resizeactive = binding "$mainMod CTRL" "resizeactive";
+        mvactive = binding "$mainMod ALT" "moveactive";
+        mvtows = binding "$mainMod SHIFT" "movetoworkspace";
         arr = [1 2 3 4 5 6 7 8 9];
       in
         [
-          "$mod, Q, exec, $terminal"
-          "$mod, C, killactive" 
-          "$mod, E, exec, $fileManager"
-          "$mod, V, togglefloating"
-          "$mod, R, exec, $menu"
-          "$mod, P, pseudo" # dwindle
-          "$mod, I, togglesplit" # dwindle
-          "$mod, F, fullscreen"
-          "$mod SHIFT, Q, exec, wlogout"
-          "$mod, N, exec, swaync-client -t"
+          "$mainMod, Q, exec, $terminal"
+          "$mainMod, C, killactive" 
+          "$mainMod, E, exec, $fileManager"
+          "$mainMod, V, togglefloating"
+          "$mainMod, R, exec, $menu"
+          "$mainMod, P, pseudo" # dwindle
+          "$mainMod, I, togglesplit" # dwindle
+          "$mainMod, F, fullscreen"
+          "$mainMod SHIFT, Q, exec, wlogout"
+          "$mainMod, N, exec, swaync-client -t"
 
-          "$mod, S, togglespecialworkspace, magic"
-          "$mod SHIFT, S, movetoworkspace, special:magic"
+          "$mainMod, S, togglespecialworkspace, magic"
+          "$mainMod SHIFT, S, movetoworkspace, special:magic"
+
+					"$mainMod, PRINT, exec, hyprshot -m window"
+					", PRINT, exec, hyprshot -m output"
+					"$shiftmainMod, PRINT, exec, hyprshot -m region"
 
           (mvfocus "k" "u")
           (mvfocus "j" "d")
