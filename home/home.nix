@@ -6,27 +6,14 @@
   imports = [
     ./hyprland.nix
     ./kitty.nix
-    ./stylix.nix
   ];
 
-  # Home Manager needs a bit of information about you and the paths it should
-  # manage.
   home.username = "manuel";
   home.homeDirectory = "/home/manuel";
+  home.stateVersion = "24.05";
 
-  # This value determines the Home Manager release that your configuration is
-  # compatible with. This helps avoid breakage when a new Home Manager release
-  # introduces backwards incompatible changes.
-  #
-  # You should not change this value, even if you update Home Manager. If you do
-  # want to update the value, then make sure to first check the Home Manager
-  # release notes.
-  home.stateVersion = "24.05"; # Please read the comment before changing.
-
-  # The home.packages option allows you to install Nix packages into your
-  # environment.
   home.packages = with pkgs; [
-    # MEdia
+    # Media
     google-chrome
     webcord
     discord
@@ -64,6 +51,7 @@
     unzip
     brightnessctl
     pavucontrol
+    gnome.nautilus
 
     # Fonts
     (nerdfonts.override {fonts = ["JetBrainsMono"];})
@@ -110,21 +98,6 @@
 
   gtk = {
     enable = true;
-    theme = {
-      name = "adw-gtk3-dark";
-      package = pkgs.adw-gtk3;
-    };
-    iconTheme = {
-      name = "MoreWaita";
-      package = pkgs.morewaita-icon-theme;
-    };
-  };
-
-  home.pointerCursor = {
-    name = "Bibata-Modern-Classic";
-    package = pkgs.bibata-cursors;
-    size = 20;
-    gtk.enable = true;
   };
 
   programs.starship = {
