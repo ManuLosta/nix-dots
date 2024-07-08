@@ -8,12 +8,15 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    stylix.url = "github:danth/stylix";
   };
 
   outputs = {
     self,
     nixpkgs,
     home-manager,
+    stylix,
     ...
   } @ inputs: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
@@ -27,6 +30,7 @@
           home-manager.useUserPackages = true;
           home-manager.users.manuel = import ./home/home.nix;
         }
+        stylix.nixosModules.stylix
       ];
     };
   };
