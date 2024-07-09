@@ -6,27 +6,30 @@
   imports = [
     ./hyprland.nix
     ./kitty.nix
+    ./waybar.nix
+    ./vesktop.nix
   ];
 
   home.username = "manuel";
   home.homeDirectory = "/home/manuel";
   home.stateVersion = "24.05";
 
+  stylix.targets.waybar.enable = false;
+
   home.packages = with pkgs; [
     # Media
     google-chrome
-    webcord
-    discord
     spotify
 
     # Desktop
     swww
     waypaper
-    waybar
     wofi
     wlogout
     wl-clipboard
     hyprshot
+    swaynotificationcenter
+    playerctl
 
     # DEV
     jetbrains.idea-ultimate

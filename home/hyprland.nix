@@ -144,10 +144,6 @@ in {
         "suppressevent maximize, class:.*"
       ];
 
-      windowrule = [
-        "opacity 0.9 0.8,^(kitty)$"
-      ];
-
       misc = {
         force_default_wallpaper = 0;
         disable_hyprland_logo = true;
