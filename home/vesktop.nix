@@ -7,6 +7,8 @@
     vesktop
   ];
 
+  services.arrpc.enable = true;
+
   xdg.configFile."vesktop/themes/nix-colors-theme.css" = {
     text = with config.stylix.base16Scheme; ''
 
