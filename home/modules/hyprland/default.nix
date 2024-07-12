@@ -7,6 +7,10 @@
   brightnessctl = "${pkgs.brightnessctl}/bin/brightnessctl";
   pactl = "${pkgs.pulseaudio}/bin/pactl";
 in {
+  imports = [
+    ./hypridle.nix
+  ];
+
   wayland.windowManager.hyprland = {
     enable = true;
     systemd.enable = true;

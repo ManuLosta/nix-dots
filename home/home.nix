@@ -5,12 +5,12 @@
   ...
 }: {
   imports = [
-    ./hyprland.nix
-    ./kitty.nix
-    ./waybar.nix
-    ./vesktop.nix
+    ./modules/hyprland
+    ./modules/kitty.nix
+    ./modules/waybar.nix
+    ./modules/vesktop.nix
     inputs.nixvim.homeManagerModules.nixvim
-    ./neovim
+    ./modules/neovim
   ];
 
   home.username = "manuel";
@@ -25,6 +25,7 @@
     # Media
     google-chrome
     spotify
+    discord
 
     # Desktop
     swww
@@ -44,17 +45,16 @@
     lua
     cargo
     rustc
-    postman
     openjdk21
     python3
     alejandra
     nil
     lua-language-server
     stylua
+    httpie-desktop
 
     # Tools
     htop
-    neofetch
     bat
     ripgrep
     lazygit
