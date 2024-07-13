@@ -20,7 +20,7 @@ in {
       "$mainMod" = "SUPER";
       "$terminal" = "kitty";
       "$file" = "nautilus";
-      "$menu" = "wofi --show drun";
+      "$menu" = "rofi -show drun -show-icons";
 
       exec-once = [
         "waybar"
@@ -152,6 +152,18 @@ in {
         force_default_wallpaper = 0;
         disable_hyprland_logo = true;
       };
+
+      env = [
+        "XDG_CURRENT_DESKTOP,Hyprland"
+        "XDG_SESSION_TYPE,wayland"
+        "XDG_SESSION_DEKSTOP,Hyprland"
+        "QT_QPA_PLATFORM,wayland"
+        "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
+        "QT_AUTO_SCREEN_SCALE_FACTOR,1"
+        "MOZ_ENABLE_WAYLAND,1"
+        "XDG_SESSION_TYPE,wayland"
+        "HYPRSHOT_DIR,$HOME/Pictures/screenshots"
+      ];
     };
   };
 }

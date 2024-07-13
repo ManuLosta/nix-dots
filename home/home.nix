@@ -30,7 +30,7 @@
     # Desktop
     swww
     waypaper
-    wofi
+    rofi-wayland
     wlogout
     wl-clipboard
     hyprshot
@@ -48,10 +48,8 @@
     openjdk21
     python3
     alejandra
-    nil
-    lua-language-server
-    stylua
     httpie-desktop
+    bun
 
     # Tools
     htop

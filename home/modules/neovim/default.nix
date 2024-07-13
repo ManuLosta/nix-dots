@@ -17,6 +17,7 @@
     plugins = {
       lualine.enable = true;
       neo-tree.enable = true;
+      neocord.enable = true;
     };
 
     plugins.lsp = {
