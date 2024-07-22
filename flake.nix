@@ -29,7 +29,8 @@
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
-        ./nixos/configuration.nix
+        ./hosts/desktop/configuration.nix
+        ./modules
         stylix.nixosModules.stylix
         home-manager.nixosModules.home-manager
         {

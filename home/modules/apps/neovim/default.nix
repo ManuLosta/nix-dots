@@ -12,8 +12,6 @@
     withNodeJs = true;
     withRuby = true;
 
-    colorschemes.gruvbox.enable = true;
-
     plugins = {
       lualine.enable = true;
       neo-tree.enable = true;

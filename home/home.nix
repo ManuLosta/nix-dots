@@ -5,19 +5,13 @@
   ...
 }: {
   imports = [
-    ./modules/hyprland
-    ./modules/kitty.nix
-    ./modules/waybar.nix
-    ./modules/vesktop.nix
+    ./modules
     inputs.nixvim.homeManagerModules.nixvim
-    ./modules/neovim
   ];
 
   home.username = "manuel";
   home.homeDirectory = "/home/manuel";
   home.stateVersion = "24.05";
-
-  stylix.targets.waybar.enable = false;
 
   nixpkgs.config.allowUnfree = true;
 
@@ -26,15 +20,7 @@
     google-chrome
     spotify
     discord
-
-    # Desktop
-    swww
-    waypaper
-    rofi-wayland
-    wlogout
-    wl-clipboard
-    hyprshot
-    swaynotificationcenter
+    firefox
     playerctl
 
     # DEV
@@ -61,6 +47,8 @@
     brightnessctl
     pavucontrol
     nautilus
+    libreoffice-qt
+    gnome.gnome-software
 
     # Fonts
     (nerdfonts.override {fonts = ["JetBrainsMono"];})
@@ -69,6 +57,8 @@
     cantarell-fonts
     font-awesome
   ];
+
+  module.hyprland.enable = true;
 
   gtk = {
     enable = true;

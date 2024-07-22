@@ -283,6 +283,7 @@
         padding-right: 4px;
     }  '';
 in {
+  stylix.targets.waybar.enable = false;
   programs.waybar = {
     enable = true;
     style = css;
