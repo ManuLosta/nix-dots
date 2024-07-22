@@ -1,8 +1,10 @@
 {
   pkgs,
   config,
+  lib,
   ...
 }: let
+  cfg = config.module.waybar;
   workspaces = {
     format = "{icon}";
     on-click = "activate";
@@ -283,10 +285,16 @@
         padding-right: 4px;
     }  '';
 in {
-  stylix.targets.waybar.enable = false;
-  programs.waybar = {
-    enable = true;
-    style = css;
-    settings = {mainBar = mainWaybarConfig;};
+  options = {
+    module.waybar.enable = lib.mkEnableOption "Enable waybar";
+  };
+
+  config = lib.mkIf cfg.enable {
+    stylix.targets.waybar.enable = false;
+    programs.waybar = {
+      enable = true;
+      style = css;
+      settings = {mainBar = mainWaybarConfig;};
+    };
   };
 }

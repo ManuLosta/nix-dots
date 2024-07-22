@@ -3,13 +3,15 @@
   config,
   pkgs,
   ...
-}: {
+}: let
+  cfg = config.module.services.theme;
+in {
   options = {
-    theme.enable =
+    module.services.theme.enable =
       lib.mkEnableOption "Enable Stylix";
   };
 
-  config = lib.mkIf config.theme.enable {
+  config = lib.mkIf cfg.enable {
     # Stylix Config
     stylix = {
       enable = true;
@@ -31,7 +33,7 @@
         base0E = "d3869b"; # purple
         base0F = "d65d0e"; # brown
       };
-      image = ./leaves.png;
+      image = ../../../assets/leaves.png;
       polarity = "dark";
       opacity.terminal = 0.9;
 

@@ -5,7 +5,8 @@
   ...
 }: {
   imports = [
-    ./theme
-    ./sound.nix
+    ./services/theme
+    ./services/hyprland
+    ./services/gaming
   ];
 }

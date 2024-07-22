@@ -10,10 +10,6 @@
   pactl = "${pkgs.pulseaudio}/bin/pactl";
   cfg = config.module.hyprland;
 in {
-  imports = [
-    ./hypridle.nix
-  ];
-
   options = {
     module.hyprland.enable = lib.mkEnableOption "Enable Hyprland";
   };
@@ -28,6 +24,11 @@ in {
       hyprshot
       swaynotificationcenter
     ];
+
+    module = {
+      waybar.enable = true;
+      hypridle.enable = true;
+    };
 
     wayland.windowManager.hyprland = {
       enable = true;

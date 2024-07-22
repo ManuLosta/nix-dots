@@ -58,13 +58,12 @@
     font-awesome
   ];
 
-  module.hyprland.enable = true;
-
-  gtk = {
-    enable = true;
+  module = {
+    hyprland.enable = true;
+    starship.enable = true;
   };
 
-  programs.starship = {
+  gtk = {
     enable = true;
   };
 
