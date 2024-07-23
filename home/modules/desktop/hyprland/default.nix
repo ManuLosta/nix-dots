@@ -28,6 +28,7 @@ in {
     module = {
       waybar.enable = true;
       hypridle.enable = true;
+      hyprlock.enable = true;
     };
 
     wayland.windowManager.hyprland = {

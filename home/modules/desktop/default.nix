@@ -3,5 +3,6 @@
     ./hyprland
     ./waybar
     ./hypridle
+    ./hyprlock
   ];
 }

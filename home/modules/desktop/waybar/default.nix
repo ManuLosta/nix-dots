@@ -25,9 +25,6 @@
       "clock"
       "tray"
     ];
-    modules-center = [
-      "mpris"
-    ];
 
     "wlr/workspaces" = workspaces;
     "hyprland/workspaces" = workspaces;
