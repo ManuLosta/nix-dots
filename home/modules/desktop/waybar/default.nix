@@ -17,14 +17,20 @@
     height = 14;
     position = "top";
 
-    modules-left = ["custom/logo" "hyprland/workspaces"];
-    modules-right = [
+    modules-left = [
+      "custom/logo"
+      "hyprland/workspaces"
       "cpu"
       "memory"
+    ];
+
+    modules-right = [
       "network"
       "bluetooth"
       "pulseaudio"
+      "battery"
       "clock"
+      "custom/notification"
       "tray"
     ];
 
@@ -58,6 +64,43 @@
       timezones = [
         "America/Buenos_Aires"
       ];
+    };
+
+    # Notifications
+    "custom/notification" = {
+      exec = "${pkgs.swaynotificationcenter}/bin/swaync-client -swb";
+      return-type = "json";
+      format = "{icon}";
+      on-click = "${pkgs.swaynotificationcenter}/bin/swaync-client -t -sw";
+      on-click-right = "${pkgs.swaynotificationcenter}/bin/swaync-client -d -sw";
+      escape = true;
+
+      format-icons = {
+        notification = "󰂚";
+        none = "󰂜";
+        dnd-notification = "󰂛";
+        dnd-none = "󰪑";
+        inhibited-notification = "󰂛";
+        inhibited-none = "󰪑";
+        dnd-inhibited-notification = "󰂛";
+        dnd-inhibited-none = "󰪑";
+      };
+    };
+
+    battery = {
+      format = "{icon} {capacity}%";
+      format-charging = " {capacity}%";
+      format-icons = [
+        ""
+        ""
+        ""
+        ""
+        ""
+      ];
+      states = {
+        critical = 20;
+      };
+      tooltip = false;
     };
 
     cpu = {
@@ -174,6 +217,8 @@
     #pulseaudio,
     #custom-wallchange,
     #custom-mode,
+    #custom-notification,
+    #battery,
     #tray {
         color: @theme_text_color;
         background: shade(alpha(@theme_text_colors, 0.9), 1.25);
@@ -285,7 +330,10 @@
     }  '';
 in {
   options = {
-    module.waybar.enable = lib.mkEnableOption "Enable waybar";
+    module.waybar = {
+      enable = lib.mkEnableOption "Enable waybar";
+      battery = lib.mkEnableOption "Enable battery";
+    };
   };
 
   config = lib.mkIf cfg.enable {
