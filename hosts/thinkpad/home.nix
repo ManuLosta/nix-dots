@@ -60,18 +60,12 @@
       enable = true;
       monitors = [
         {
-          name = "DP-1";
-          width = 1920;
-          height = 1080;
-          refreshRate = 165;
-          position = "0x0";
-        }
-        {
-          name = "HDMI-A-1";
+          name = "eDP-1";
           width = 1920;
           height = 1080;
           refreshRate = 60;
-          position = "1920x0";
+          position = "0x0";
+          scale = "1.2";
         }
       ];
     };

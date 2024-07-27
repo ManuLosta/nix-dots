@@ -43,7 +43,7 @@
       thinkpad = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
         modules = [
-          ./hosts/desktop/configuration.nix
+          ./hosts/thinkpad/configuration.nix
           stylix.nixosModules.stylix
           home-manager.nixosModules.home-manager
           {
