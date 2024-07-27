@@ -14,10 +14,12 @@ in {
     module.hyprland.enable = lib.mkEnableOption "Enable Hyprland";
   };
 
+  imports = [
+    ./monitors.nix
+  ];
+
   config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [
-      swww
-      waypaper
       rofi-wayland
       wlogout
       wl-clipboard
@@ -49,11 +51,6 @@ in {
           "hyprctl setcursor Bibata-Modern-Classic 20"
         ];
 
-        monitor = [
-          "monitor=DP-1,1920x1080@165,auto,1"
-          "monitor=HDMI-A-1,1920x1080@60,auto,1"
-        ];
-
         input = {
           kb_layout = "latam";
           follow_mouse = 1;
@@ -75,7 +72,7 @@ in {
         };
 
         decoration = {
-          rounding = 5;
+          rounding = 0;
 
           blur = {
             enabled = true;

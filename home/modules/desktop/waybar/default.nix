@@ -19,6 +19,8 @@
 
     modules-left = ["custom/logo" "hyprland/workspaces"];
     modules-right = [
+      "cpu"
+      "memory"
       "network"
       "bluetooth"
       "pulseaudio"

@@ -1,7 +1,7 @@
 {...}: {
   imports = [
-    ./neovim
-    ./kitty.nix
-    ./vesktop.nix
+    ./kitty
+    ./discord
+    ./google-chrome
   ];
 }

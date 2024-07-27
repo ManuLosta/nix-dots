@@ -5,8 +5,7 @@
   ...
 }: {
   imports = [
-    ./modules
-    inputs.nixvim.homeManagerModules.nixvim
+    ../../home/modules
   ];
 
   home.username = "manuel";
@@ -17,10 +16,7 @@
 
   home.packages = with pkgs; [
     # Media
-    google-chrome
     spotify
-    discord
-    firefox
     playerctl
 
     # DEV
@@ -34,8 +30,6 @@
     openjdk21
     python3
     alejandra
-    httpie-desktop
-    bun
 
     # Tools
     htop
@@ -49,6 +43,7 @@
     nautilus
     libreoffice-qt
     gnome.gnome-software
+    tmux
 
     # Fonts
     (nerdfonts.override {fonts = ["JetBrainsMono"];})
@@ -56,11 +51,37 @@
     noto-fonts-emoji
     cantarell-fonts
     font-awesome
+
+    inputs.nixvim.packages.${system}.default
   ];
 
   module = {
-    hyprland.enable = true;
+    hyprland = {
+      enable = true;
+      monitors = [
+        {
+          name = "DP-1";
+          width = 1920;
+          height = 1080;
+          refreshRate = 165;
+          position = "0x0";
+        }
+        {
+          name = "HDMI-A-1";
+          width = 1920;
+          height = 1080;
+          refreshRate = 60;
+          position = "1920x0";
+        }
+      ];
+    };
     starship.enable = true;
+  };
+
+  apps = {
+    kitty.enable = true;
+    google-chrome.enable = true;
+    discord.enable = true;
   };
 
   gtk = {

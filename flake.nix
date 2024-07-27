@@ -11,10 +11,7 @@
 
     stylix.url = "github:danth/stylix";
 
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    nixvim.url = "github:ManuLosta/nixvim";
 
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
   };
@@ -37,7 +34,7 @@
           home-manager.nixosModules.home-manager
           {
             home-manager.useUserPackages = true;
-            home-manager.users.manuel = import ./home/home.nix;
+            home-manager.users.manuel = import ./hosts/desktop/home.nix;
             home-manager.extraSpecialArgs = {inherit inputs;};
           }
         ];
@@ -51,7 +48,7 @@
           home-manager.nixosModules.home-manager
           {
             home-manager.useUserPackages = true;
-            home-manager.users.manuel = import ./home/home.nix;
+            home-manager.users.manuel = import ./hosts/thinkpad/home.nix;
             home-manager.extraSpecialArgs = {inherit inputs;};
           }
         ];
