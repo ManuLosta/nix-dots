@@ -88,8 +88,8 @@
     };
 
     battery = {
-      format = "{icon} {capacity}%";
-      format-charging = " {capacity}%";
+      format = "{icon}  {capacity}%";
+      format-charging = "  {capacity}%";
       format-icons = [
         ""
         ""
@@ -227,8 +227,14 @@
         margin: 3px 3px 3px 3px;
     }
 
-    #custom-battery {
-        color: @green_1
+    #custom-notification {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+
+    #battery {
+      padding-left: 12px;
+      padding-right: 12px;
     }
 
     /* resource monitor block */
