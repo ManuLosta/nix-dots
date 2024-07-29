@@ -26,11 +26,11 @@ in {
             on-resume = "brightnessctl -r";
           }
           {
-            timeout = 600;
+            timeout = 350;
             on-timeout = "loginctl lock-session";
           }
           {
-            timeout = 660;
+            timeout = 500;
             on-timeout = "hyprctl dispatch dpms off"; # screen off when timeout has passed
             on-resume = "hyprctl dispatch dpms on"; # screen on when activity is detected after timeout has fired.
           }
